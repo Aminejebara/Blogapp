@@ -1,6 +1,8 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import userRoutes from "./routes/user.route.js";
+
 dotenv.config();
 const app = express();
 
@@ -16,3 +18,5 @@ mongoose
 app.listen(5000, () => {
   console.log("server connected to 5000");
 });
+
+app.use("/api/user", userRoutes);
